@@ -1,75 +1,97 @@
+/*
+ * My own adjustments
+ */
+label.linker {
+	float: left;
+	display: inline-block;
+	width: 6em;
+}
+span.linker {
+	display: block;
+	overflow: hidden;
+	padding-right: 5px;
+}
+
+span.linker > input{ width: 100%; }
+span.linker > textarea{ width: 100%; }
+
+div.jqi{
+	width: 600px !important;
+}
+
+
 /*! jQuery-Impromptu - v6.2.3 - 2016-04-23
 * http://trentrichardson.com/Impromptu
 * Copyright (c) 2016 Trent Richardson; Licensed MIT */
 .jqifade{
-	position: absolute; 
-	background-color: #777777; 
+	position: absolute;
+	background-color: #777777;
 }
 iframe.jqifade{
 	display:block;
 	z-index:-1;
 }
-div.jqi{ 
-	width: 400px; 
+div.jqi{
+	width: 400px;
 	max-width:90%;
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; 
-	position: absolute; 
-	background-color: #ffffff; 
-	font-size: 11px; 
-	text-align: left; 
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	position: absolute;
+	background-color: #ffffff;
+	font-size: 11px;
+	text-align: left;
 	border: solid 1px #eeeeee;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	padding: 7px;
 }
-div.jqi .jqicontainer{ 
+div.jqi .jqicontainer{
 }
-div.jqi .jqiclose{ 
+div.jqi .jqiclose{
 	position: absolute;
-	top: 4px; right: -2px; 
-	width: 18px; 
-	cursor: default; 
-	color: #bbbbbb; 
-	font-weight: bold; 
+	top: 4px; right: -2px;
+	width: 18px;
+	cursor: default;
+	color: #bbbbbb;
+	font-weight: bold;
 }
 div.jqi .jqistate{
 	background-color: #fff;
 }
 div.jqi .jqititle{
 	padding: 5px 10px;
-	font-size: 16px; 
-	line-height: 20px; 
+	font-size: 16px;
+	line-height: 20px;
 	border-bottom: solid 1px #eeeeee;
 }
-div.jqi .jqimessage{ 
-	padding: 10px; 
-	line-height: 20px; 
-	color: #444444; 
+div.jqi .jqimessage{
+	padding: 10px;
+	line-height: 20px;
+	color: #444444;
 	overflow: auto;
 }
 div.jqi .jqibuttonshide{
 	display: none;
-} 
-div.jqi .jqibuttons{ 
-	text-align: right; 
+}
+div.jqi .jqibuttons{
+	text-align: right;
 	margin: 0 -7px -7px -7px;
-	border-top: solid 1px #e4e4e4; 
+	border-top: solid 1px #e4e4e4;
 	background-color: #f4f4f4;
 	border-radius: 0 0 6px 6px;
 	-moz-border-radius: 0 0 6px 6px;
 	-webkit-border-radius: 0 0 6px 6px;
 }
-div.jqi .jqibuttons button{ 
+div.jqi .jqibuttons button{
 	margin: 0;
 	padding: 15px 20px;
 	background-color: transparent;
-	font-weight: normal; 
+	font-weight: normal;
 	border: none;
-	border-left: solid 1px #e4e4e4; 
-	color: #777; 
-	font-weight: bold; 
-	font-size: 12px; 
+	border-left: solid 1px #e4e4e4;
+	color: #777;
+	font-weight: bold;
+	font-size: 12px;
 }
 div.jqi .jqibuttons button.jqidefaultbutton{
 	color: #489afe;
@@ -82,12 +104,12 @@ div.jqi .jqibuttons button:focus{
 div.jqi .jqibuttons button[disabled]{
 	color: #aaa;
 }
-.jqiwarning .jqi .jqibuttons{ 
+.jqiwarning .jqi .jqibuttons{
 	background-color: #b95656;
 }
 
 /* sub states */
-div.jqi .jqiparentstate::after{ 
+div.jqi .jqiparentstate::after{
 	background-color: #777;
 	opacity: 0.6;
 	filter: alpha(opacity=60);
