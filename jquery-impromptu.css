@@ -2,9 +2,9 @@
  * My own adjustments
  */
 label.linker {
-	float: left;
-	display: inline-block;
-	width: 6em;
+	padding: 0px;
+	display: block;
+	width: 100%;
 }
 span.linker {
 	display: block;
