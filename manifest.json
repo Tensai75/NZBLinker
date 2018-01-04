@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name":    "NZBLinker",
+    "version": "0.1",
+    "description": "Generiert einen Link für NZBMonkey",
+   "icons": {
+      "128": "monkeyLink128.png"
+   },
+
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+	
+	"content_scripts": [
+    {
+      "matches": [
+			"<all_urls>"
+            ],
+      "js": ["jquery.min.js", "jquery-impromptu.js"],
+	  "run_at": "document_end",
+	  "all_frames": false
+    }
+	],
+	
+    "permissions": [
+        "contextMenus",
+        "activeTab"
+    ]	
+}
