@@ -13,22 +13,26 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 		var myCode = 'var str = window.getSelection().toString();' +
 					 'var header = "";' +
 					 'var password = "";' +
+					 'var title = "";' +
 					 'splitStr = str.split("\\n");' +
 					 'for (i = 0; i < splitStr.length; i++) {' +
 					 '	if (splitStr[i].toLowerCase().includes("head")) {' +
-					 '		header = splitStr[i].replace(/header:/gi, "")};' +
+					 '		header = splitStr[i].replace(/head.*(:|" ")/gi, "")};' +
 					 '	if (splitStr[i].toLowerCase().includes("pass")) {' +
-					 '		password = splitStr[i].replace(/passwort:/gi, "")};' +
+					 '		password = splitStr[i].replace(/pass.*(:|" ")/gi, "")};' +
 					 '}' +
-					 
+					 'header = header.trim();' +
+					 'password = password.trim();' +
+					 'title = splitStr[0].replace(/ /g,".");' +
+					 'title = title.trim();' +
+					 'title = title.replace(/[^\x20-\x7E]+/g, "");' +
 					 'var genLinkForm = {' + 
 					 'state0: {' +
 					 'title: "NZBLinker",' + 
-					 'html: "<label>Titel       <input type=text name=fname value=" + splitStr[0].replace(/ /g,".") + "></label><br><label>Header   <input type=text name=fhead value=" + header + "></label><br><label>Passwort <input type=text name=fpass value=" + password + "></label><br><label>Debug     <textarea rows=8 cols=40>" + str + "</textarea>",' +
-					 
+					 'html: "<div style=\'width:100%\'><label>Titel<br /><input style=\'width:100%\' type=text name=fname value=\'" + title + "\'></label><br><label>Header<br /><input style=\'width:100%\' type=text name=fhead value=\'" + header + "\'></label><br><label>Password<br /><input style=\'width:100%\' type=text name=fpass value=\'" + password + "\'></label><br><label>Selected text<br /><textarea  style=\'width:100%\' rows=10>" + str + "</textarea></div>",' +				
 					 'buttons: { "OK": true},' + 
 					 'submit:function(e,v,m,f){' +
-					 'var newURL = "nzblnk:?t=" + f.fname + "&h=" + f.fhead + "&p=" + f.fpass;' +
+					 'var newURL = "nzblnk:?t=" + encodeURIComponent(f.fname) + "&h=" + encodeURIComponent(f.fhead) + "&p=" + encodeURIComponent(f.fpass);' +
 					 '	console.log(newURL);' +
 					 '	window.open(newURL,"_self")' +
 					 '}' +
