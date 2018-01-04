@@ -7,13 +7,13 @@ var NZBselection = window.getSelection().toString(),
 	NZBlink = "";
 
 for (i = 1; i < lines.length; i++) {
-	if (lines[i].toLowerCase().match(/^head.*(:|\s)/)) {
+	if (lines[i].match(/^head.*(:|\s)/i)) {
 		NZBheader = lines[i].replace(/^head.*(:|\s)/gi, "").trim()
 	}
-	if (lines[i].toLowerCase().match(/^passwor[td](:|\s)/)) {
+	else if (lines[i].match(/^passwor[td](:|\s)/i)) {
 		NZBpassword = lines[i].replace(/^passwor[td](:|\s)/gi, "").trim()
 	}
-	if (lines[i].toLowerCase().match(/^(group|gruppe).*(:|\s)/)) {
+	else if (lines[i].match(/^(group|gruppe).*(:|\s)/i)) {
 		NZBgroup = lines[i].replace(/^(group|gruppe).*(:|\s)/gi, "").trim()
 	}
 }
@@ -70,6 +70,9 @@ function updateNZBLink() {
 }
 
 function generateNZBLink(title, header, password, group) {
-	nzblink = "nzblnk:?t=" + encodeURIComponent(title.normalize('NFD').replace(/[^\x20-\x7E]/g, "").replace(/[/\\?%*:|"<>]/g, "")) + "&h=" + encodeURIComponent(header) + "&p=" + encodeURIComponent(password) + "&g=" + encodeURIComponent(group);
-	return nzblink;
+	var cleanTitle = title.normalize('NFD').replace(/[^\x20-\x7E]/g, "").replace(/[/\\?%*:|"<>]/g, "");
+	return "nzblnk:?t=" + encodeURIComponent(cleanTitle)
+				+ "&h=" + encodeURIComponent(header)
+				+ "&p=" + encodeURIComponent(password)
+				+ "&g=" + encodeURIComponent(group);
 }
