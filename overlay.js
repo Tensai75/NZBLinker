@@ -7,14 +7,14 @@ var NZBselection = window.getSelection().toString(),
 	NZBlink = "";
 
 for (i = 1; i < lines.length; i++) {
-	if (lines[i].toLowerCase().match(/^head.*(:|\s)/)) {
-		NZBheader = lines[i].replace(/^head.*(:|\s)/gi, "").trim()
+	if (lines[i].trim().toLowerCase().match(/^head.*(:|\s)/)) {
+		NZBheader = lines[i].trim().replace(/^head.*(:|\s)/gi, "").trim()
 	}
-	if (lines[i].toLowerCase().match(/^passwor[td](:|\s)/)) {
-		NZBpassword = lines[i].replace(/^passwor[td](:|\s)/gi, "").trim()
+	if (lines[i].trim().toLowerCase().match(/^passwor[td](:|\s)/)) {
+		NZBpassword = lines[i].trim().replace(/^passwor[td](:|\s)/gi, "").trim()
 	}
-	if (lines[i].toLowerCase().match(/^(group|gruppe).*(:|\s)/)) {
-		NZBgroup = lines[i].replace(/^(group|gruppe).*(:|\s)/gi, "").trim()
+	if (lines[i].trim().toLowerCase().match(/^(group|gruppe).*(:|\s)/)) {
+		NZBgroup = lines[i].trim().replace(/^(group|gruppe).*(:|\s)/gi, "").trim()
 	}
 }
 
