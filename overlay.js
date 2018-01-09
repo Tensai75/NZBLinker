@@ -37,7 +37,7 @@ if ((NZBheader === "" || NZBpassword === "" || NZBgroup === "") && getSelectionH
 		NZBpassword = NZBselection.replace(/[\S\s]*passwor[td](:|\s).*<input.*value\s?=\s?("|')/i, "").replace(/("|')[\S\s]*/i, "")
 	}
 	if (NZBgroup === "") {
-		NZBgropu = NZBselection.replace(/[\S\s]*(group(s?)|gruppe(n?))(:|\s).*<input.*value\s?=\s?("|')/i, "").replace(/("|')[\S\s]*/i, "")
+		NZBgroup = NZBselection.replace(/[\S\s]*(group(s?)|gruppe(n?))(:|\s).*<input.*value\s?=\s?("|')/i, "").replace(/("|')[\S\s]*/i, "")
 	}
 }
 
