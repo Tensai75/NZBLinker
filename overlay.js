@@ -1,6 +1,6 @@
 var NZBselection = window.getSelection().toString(),
 	lines = NZBselection.split("\n"),
-	NZBtitle = lines[0].replace(/[\s]/g, ".").replace(/['"]/g, "").trim(),
+	NZBtitle = lines[0].trim().replace(/[\s]/g, ".").replace(/['"]/g, ""),
 	NZBheader = "",
 	NZBpassword = "",
 	NZBgroup = "",
