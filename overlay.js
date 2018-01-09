@@ -7,14 +7,37 @@ var NZBselection = window.getSelection().toString(),
 	NZBlink = "";
 
 for (i = 1; i < lines.length; i++) {
-	if (lines[i].trim().toLowerCase().match(/^head.*(:|\s)/)) {
-		NZBheader = lines[i].trim().replace(/^head.*(:|\s)/gi, "").trim()
+	if (lines[i].trim().match(/^head.?.?(:|\s)/i)) {
+		NZBheader = lines[i].trim().replace(/^head.?.?(:|\s)/i, "").trim()
+		if (NZBheader === "" && i + 1 < lines.length && lines[i+1].trim() !== "") {
+			NZBheader = lines[++i].trim(); // make sure to skip next line since we already consumed it
+		}
 	}
-	if (lines[i].trim().toLowerCase().match(/^passwor[td](:|\s)/)) {
-		NZBpassword = lines[i].trim().replace(/^passwor[td](:|\s)/gi, "").trim()
+	if (lines[i].trim().match(/^passwor[td](:|\s)/i)) {
+		NZBpassword = lines[i].trim().replace(/^passwor[td](:|\s)/i, "").trim()
+		if (NZBpassword === "" && i + 1 < lines.length && lines[i+1].trim() !== "") {
+			NZBpassword = lines[++i].trim(); // make sure to skip next line since we already consumed it
+		}
 	}
-	if (lines[i].trim().toLowerCase().match(/^(group|gruppe).*(:|\s)/)) {
-		NZBgroup = lines[i].trim().replace(/^(group|gruppe).*(:|\s)/gi, "").trim()
+	if (lines[i].trim().match(/^(group(s?)|gruppe(n?))(:|\s)/i)) {
+		NZBgroup = lines[i].trim().replace(/^(group(s?)|gruppe(n?))(:|\s)/i, "").trim()
+		if (NZBgroup === "" && i + 1 < lines.length && lines[i+1].trim() !== "") {
+			NZBgroup = lines[++i].trim(); // make sure to skip next line since we already consumed it
+		}
+	}
+}
+
+// if header, password or group are empty check if maybe they are in a input field and try to get them from the value attribute
+if ((NZBheader === "" || NZBpassword === "" || NZBgroup === "") && getSelectionHtml().match(/<input/i)) {
+	NZBselection = getSelectionHtml() // The selected text will in this case be presented as the html source code
+	if (NZBheader === "") {
+		NZBheader = NZBselection.replace(/([\S\s]*head.?.?)(:|\s).*<input.*value\s?=\s?("|')/i, "").replace(/("|')[\S\s]*/i, "")
+	}
+	if (NZBpassword === "") {
+		NZBpassword = NZBselection.replace(/[\S\s]*passwor[td](:|\s).*<input.*value\s?=\s?("|')/i, "").replace(/("|')[\S\s]*/i, "")
+	}
+	if (NZBgroup === "") {
+		NZBgropu = NZBselection.replace(/[\S\s]*(group(s?)|gruppe(n?))(:|\s).*<input.*value\s?=\s?("|')/i, "").replace(/("|')[\S\s]*/i, "")
 	}
 }
 
@@ -72,4 +95,23 @@ function updateNZBLink() {
 function generateNZBLink(title, header, password, group) {
 	nzblink = "nzblnk:?t=" + encodeURIComponent(title.normalize('NFD').replace(/[^\x20-\x7E]/g, "").replace(/[/\\?%*:|"<>]/g, "")) + "&h=" + encodeURIComponent(header) + "&p=" + encodeURIComponent(password) + "&g=" + encodeURIComponent(group);
 	return nzblink;
+}
+
+ function getSelectionHtml() {
+    var html = "";
+    if (typeof window.getSelection != "undefined") {
+        var sel = window.getSelection();
+        if (sel.rangeCount) {
+            var container = document.createElement("div");
+            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+                container.appendChild(sel.getRangeAt(i).cloneContents());
+            }
+            html = container.innerHTML;
+        }
+    } else if (typeof document.selection != "undefined") {
+        if (document.selection.type == "Text") {
+            html = document.selection.createRange().htmlText;
+        }
+    }
+    return html;
 }
