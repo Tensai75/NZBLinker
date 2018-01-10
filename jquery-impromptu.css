@@ -13,7 +13,7 @@ span.linker {
 }
 
 span.linker > input{ width: 100%; }
-span.linker > textarea{ width: 100%; }
+span.linker > textarea{ width: 99.9%; }
 
 div.jqi{
 	width: 600px !important;
