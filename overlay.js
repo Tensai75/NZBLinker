@@ -17,7 +17,7 @@ NZBselection = NZBselection.replace(/(<\/div>|<\/span>|<\/p>|<\/td>|<\/li>)/ig, 
 NZBselection = jQuery(NZBselection).text().replace(/^\s*([\s|\S]*?)\s*?$/mg, "$1");
 
 // test if the selection contains a description for the header starting with some common words used for and ending with a colon
-if (/^.*(header|subje[ck]t|betreff).*:\s*/im.test(NZBselection)) {
+if (/^.*((header|subje[ck]t|betreff).*:\s*)+(\S.*\S)[\n|\r]/im.test(NZBselection)) {
 	// set the header to the text after the description
 	// we search for any text until we find it and then get all of it until the next line break
 	// like this we will find the header information either if placed on the same line or if placed on the next line
@@ -43,7 +43,7 @@ else {
 	NZBtitle = NZBselection.split("\n")[0];
 
 	// test if the selection contains a description for the password starting with some common words used for and ending with a colon
-	if (/^.*(passwor[td]|pw|pass).*:\s*/im.test(NZBselection)) {
+	if (/^.*((passwor[td]|pw|pass).*:\s*)+(\S.*\S)[\n|\r]/im.test(NZBselection)) {
 		// set the password to the text after the description
 		// we search for any text until we find it and then get all of it until the next line break
 		// like this we will find the password either if placed on the same line or if placed on the next line
