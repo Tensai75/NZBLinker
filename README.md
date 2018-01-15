@@ -28,4 +28,4 @@ Mit den Buttons unten kann der erstellte NZBLink dann entweder in die Zwischenab
 1. Die Erweiterung aus dem entsprechenden Webstore (siehe oben) installieren - fertig!
 
 ## Urheberrechtsnachweis
-Diese Erweiterung basiert auf der Idee und dem ursprünglichen Skript von Zandrial aus dem U4A Forum und wurde von mir und wilriker gemeinsam weiterentwickelt.
+Diese Erweiterung basiert auf der Idee und dem ursprünglichen Skript von Zandrial und wurde von mir und wilriker gemeinsam weiterentwickelt.
