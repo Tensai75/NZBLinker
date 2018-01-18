@@ -1,7 +1,7 @@
 # NZBLinker
 Chrome und Firefox Erweiterung zur Erstellung eines NZBLink für den NZBMonkey aus einem markierten Text
 
-# Download
+## Download
 Download für Chrome: [Chrome Webstore](https://chrome.google.com/webstore/detail/nzblinker/podpddhcepkggomgplkpkdhehckkllab)
 
 Download für Firefox: [Firefox Add-on](https://addons.mozilla.org/de/firefox/addon/nzblinker/)
