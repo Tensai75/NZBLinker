@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name":    "NZBLinker",
-	"version": "0.5.1",
+	"version": "0.6.0",
 	"description": "Generiert einen Link für NZBMonkey",
 	"icons": {
 		"128": "monkeyLink128.png"
