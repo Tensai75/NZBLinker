@@ -16,7 +16,7 @@
 		"matches": [
 			"<all_urls>"
 		],
-		"js": ["jquery.min.js", "jquery-impromptu.js"],
+		"js": ["jquery-3.3.1.js", "jquery-impromptu.js"],
 		"run_at": "document_end",
 		"all_frames": false
 	}
