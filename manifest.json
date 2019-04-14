@@ -38,7 +38,7 @@
         
     "applications": {
         "gecko": {
-            "id": "{36a566b6-5e95-11e9-8647-d663bd873d93}",
+            "id": "{def38e25-28fb-4662-ad6d-bfa415dfd06b}",
             "strict_min_version": "60.0"
         }
     }
