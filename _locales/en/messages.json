@@ -1,0 +1,74 @@
+{
+    "extName": {
+        "message": "NZBLinker",
+        "description": "Extension name"
+    },
+    "extSlogan": {
+        "message": "Create a NZBlnk either from a selected text or from scratch",
+        "description": "Extension slogan/short description"
+    },
+    "extNZBCreateLink": {
+        "message": "Create NZBlnk",
+        "description": "Create NZBlnk"
+    },
+    "extNZBTitle": {
+        "message": "Title",
+        "description": "NZB Title"
+    },
+    "extNZBHeader": {
+        "message": "Header",
+        "description": "NZB header"
+    },
+    "extNZBPassword": {
+        "message": "Password",
+        "description": "NZB Passwort"
+    },
+    "extNZBGroups": {
+        "message": "Groups",
+        "description": "NZB Groups"
+    },
+    "extNZBGroupsNote": {
+        "message": "one group per line",
+        "description": "NZB Groups explanation"
+    },
+    "extNZBSelectedText": {
+        "message": "Selected text",
+        "description": "Selected Text"
+    },
+    "extNZBConvertTitle": {
+        "message": "Handling of periods/spaces in the title",
+        "description": "Handling of periods/spaces in the title"
+    },
+    "extNZBConvertTitleUntouched": {
+        "message": "Leave periods/spaces in the title as is",
+        "description": "Leave periods/spaces in the title as is"
+    },
+    "extNZBConvertTitleToSpaces": {
+        "message": "Convert all periods in the title to spaces",
+        "description": "Convert all periods in the title to spaces"
+    },
+    "extNZBConvertTitleToPeriods": {
+        "message": "Convert all spaces in the title to periods",
+        "description": "Convert all spaces in the title to periods"
+    },
+    "extNZBOpenLink": {
+        "message": "Open NZBlnk",
+        "description": "Open NZB link in brwoser"
+    },
+    "extNZBCopyLink": {
+        "message": "Copy NZBlnk",
+        "description": "Copy NZB link to clipboard"
+    },
+    "cancel": {
+        "message": "Cancel",
+        "description": "Cancel text e.g. for buttons"
+    },
+    "close": {
+        "message": "Close",
+        "description": "Close text e.g. for buttons"
+    },
+    "required": {
+        "message": "required",
+        "description": "Hint message for required information"
+    }
+}

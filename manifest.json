@@ -1,30 +1,45 @@
 {
 	"manifest_version": 2,
-	"name":    "NZBLinker",
-	"version": "0.6.0",
-	"description": "Generiert einen Link für NZBMonkey",
+    "name":"__MSG_extName__",
+    "version":"0.7.0",
+    "description":"__MSG_extSlogan__",
+    "default_locale": "en",
 	"icons": {
-		"128": "monkeyLink128.png"
+		"128": "/icons/nzblinker128.png",
+        "96": "/icons/nzblinker96.png",
+        "48": "/icons/nzblinker48.png",
+        "32": "/icons/nzblinker32.png",
+        "16": "/icons/nzblinker16.png"
 	},
 	"background": {
-		"persistent": false,
-		"scripts": ["background.js"]
+		"persistent": true,
+		"scripts": ["/js/background.js"]
 	},
 	
-	"content_scripts": [
-	{
-		"matches": [
-			"<all_urls>"
-		],
-		"js": ["jquery-3.3.1.js", "jquery-impromptu.js"],
-		"run_at": "document_end",
-		"all_frames": false
-	}
-	],
-
 	"permissions": [
 		"contextMenus",
 		"activeTab",
 		"storage"
-	]	
+	],
+
+    "web_accessible_resources": [
+        "/icons/nzblinker.png"
+    ],
+    "browser_action": {
+      "default_icon": {
+        "128": "/icons/nzblinker128.png",
+        "96": "/icons/nzblinker96.png",
+        "48": "/icons/nzblinker48.png",
+        "32": "/icons/nzblinker32.png",
+        "16": "/icons/nzblinker16.png"
+      },
+      "default_title": "NZBLinker"
+    },
+        
+    "applications": {
+        "gecko": {
+            "id": "{36a566b6-5e95-11e9-8647-d663bd873d93}",
+            "strict_min_version": "60.0"
+        }
+    }
 }

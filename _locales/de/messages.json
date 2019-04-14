@@ -1,0 +1,74 @@
+{
+    "extName": {
+        "message": "NZBLinker",
+        "description": "Extension name"
+    },
+    "extSlogan": {
+        "message": "Erstellt einen NZBlnk entweder aus einem selektierten Text oder durch eigene Eingabe",
+        "description": "Extension slogan/short description"
+    },
+    "extNZBCreateLink": {
+        "message": "NZBlnk erstellen",
+        "description": "Create NZBlnk"
+    },
+    "extNZBTitle": {
+        "message": "Titel",
+        "description": "NZB Title"
+    },
+    "extNZBHeader": {
+        "message": "Header",
+        "description": "NZB header"
+    },
+    "extNZBPassword": {
+        "message": "Passwort",
+        "description": "NZB Passwort"
+    },
+    "extNZBGroups": {
+        "message": "Gruppen",
+        "description": "NZB Groups"
+    },
+    "extNZBGroupsNote": {
+        "message": "eine Gruppe pro Linie",
+        "description": "NZB Groups explanation"
+    },
+    "extNZBSelectedText": {
+        "message": "Selektierter Text",
+        "description": "Selected Text"
+    },
+    "extNZBConvertTitle": {
+        "message": "Behandlung von Punkten und Leerzeichen im Titel",
+        "description": "Handling of periods/spaces in the title"
+    },
+    "extNZBConvertTitleUntouched": {
+        "message": "Punkte/Leerzeichen belassen wie sie sind",
+        "description": "Leave periods/spaces in the title as is"
+    },
+    "extNZBConvertTitleToSpaces": {
+        "message": "Alle Punkte in Leerzeichen umwandeln",
+        "description": "Convert all periods in the title to spaces"
+    },
+    "extNZBConvertTitleToPeriods": {
+        "message": "Alle Leerzeichen in Punkte umwandeln",
+        "description": "Convert all spaces in the title to periods"
+    },
+    "extNZBOpenLink": {
+        "message": "NZBlnk öffnen",
+        "description": "Open NZB link in brwoser"
+    },
+    "extNZBCopyLink": {
+        "message": "NZBlnk kopieren",
+        "description": "Copy NZB link to clipboard"
+    },
+    "cancel": {
+        "message": "Abbrechen",
+        "description": "Cancel text e.g. for buttons"
+    },
+    "close": {
+        "message": "Schliessen",
+        "description": "Close text e.g. for buttons"
+    },
+    "required": {
+        "message": "erforderlich",
+        "description": "Hint message for required information"
+    }
+}
