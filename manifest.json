@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
     "name":"__MSG_extName__",
-    "version":"0.7.0",
+    "version":"0.7.1",
     "description":"__MSG_extSlogan__",
     "default_locale": "en",
 	"icons": {
@@ -35,7 +35,6 @@
       },
       "default_title": "NZBLinker"
     },
-        
     "applications": {
         "gecko": {
             "id": "{def38e25-28fb-4662-ad6d-bfa415dfd06b}",

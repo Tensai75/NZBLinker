@@ -9,7 +9,7 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 		chrome.tabs.insertCSS(tab.id, {
             file: "/css/jquery.modal.css"
         });
-		chrome.tabs.executeScript(tab.id, { file: "/js/jquery-3.3.1.js" }, function() {
+		chrome.tabs.executeScript(tab.id, { file: "/js/jquery-3.5.1.js" }, function() {
             chrome.tabs.executeScript(tab.id, { file: "/js/jquery.modal.js" }, function() {
                 chrome.tabs.executeScript(tab.id, { file: "/js/content.js" });
             });

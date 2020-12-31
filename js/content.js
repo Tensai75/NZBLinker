@@ -136,7 +136,7 @@ function showPopup() {
             eKey: true, //Enter Keypress
             addClass: 'btn-light-blue nzblinker-send', //Button Classes (btn-large | btn-small | btn-green | btn-light-green | btn-purple | btn-orange | btn-pink | btn-turquoise | btn-blue | btn-light-blue | btn-light-red | btn-red | btn-yellow | btn-white | btn-black | btn-rounded | btn-circle | btn-square | btn-disabled)
             onClick: function(result) {
-                alert($("#nzblinker-link").val());
+//              alert($("#nzblinker-link").val());
                 window.open($("#nzblinker-link").val(),"_self");
                 return true;
             }

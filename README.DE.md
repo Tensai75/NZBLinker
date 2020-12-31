@@ -32,6 +32,10 @@ Diese Erweiterung basiert auf der Idee und dem ursprünglichen Skript von Zandri
 v0.7.0 wurde von mir komplett neu designed und überarbeitet.
 
 ## Change Log
+### v0.7.1
+* Löschung eines vergessen Debug-Alert
+* Update auf jQuery 3.5.1
+
 ### v0.7.0
 * Komplett neu überarbeitete Oberfläche
 * Browser-Action beim Klick auf das Icon: Öffnen eines Fenster zur manuellen Erstellung eines NZBlnk
