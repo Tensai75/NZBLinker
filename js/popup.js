@@ -45,7 +45,7 @@ $(document).ready(function() {
             <textarea id="nzblinker-group" class="modal-prompt-input" style="height: 60px;">${nzb.group}</textarea>
         </p>
         <p>
-            <label for="nzblinker-link" style="color: rgb(0, 119, 125) !important; -webkit-text-fill-color: rgb(0, 119, 125) !important">NZBlnk:</label>
+            <label for="nzblinker-link" style="color: rgb(0, 119, 125) !important; -webkit-text-fill-color: rgb(0, 119, 125) !important">NZBLNK:</label>
             <input type="text" id="nzblinker-link" name="nzblinker-link" value="${nzb.link}" class="modal-prompt-input" style="background-color: rgb(0, 119, 125) !important; color: rgb(255, 255, 255) !important; -webkit-text-fill-color: rgb(255, 255, 255) !important"/>
         </p>
         <hr / style="height: 0px; border: 0px; border-top: 1px solid gray; margin: 20px 0px;">
