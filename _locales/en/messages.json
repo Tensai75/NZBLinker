@@ -4,12 +4,12 @@
         "description": "Extension name"
     },
     "extSlogan": {
-        "message": "Create a NZBlnk either from a selected text or from scratch",
+        "message": "Create a NZBLNK either from a selected text or from scratch",
         "description": "Extension slogan/short description"
     },
     "extNZBCreateLink": {
-        "message": "Create NZBlnk",
-        "description": "Create NZBlnk"
+        "message": "Create NZBLNK",
+        "description": "Create NZBLNK"
     },
     "extNZBTitle": {
         "message": "Title",
@@ -52,12 +52,12 @@
         "description": "Convert all spaces in the title to periods"
     },
     "extNZBOpenLink": {
-        "message": "Open NZBlnk",
-        "description": "Open NZB link in brwoser"
+        "message": "Open NZBLNK",
+        "description": "Open NZBLNK in brwoser"
     },
     "extNZBCopyLink": {
-        "message": "Copy NZBlnk",
-        "description": "Copy NZB link to clipboard"
+        "message": "Copy NZBLNK",
+        "description": "Copy NZBLNK to clipboard"
     },
     "cancel": {
         "message": "Cancel",
