@@ -31,6 +31,14 @@
         "message": "one group per line",
         "description": "NZB Groups explanation"
     },
+    "extNZBPostDate": {
+        "message": "Post date",
+        "description": "Binaries post date"
+    },
+    "extNZBPostDateNote": {
+        "message": "Format: DD.MM.YYYY",
+        "description": "Binaries post date format"
+    },
     "extNZBSelectedText": {
         "message": "Selected text",
         "description": "Selected Text"

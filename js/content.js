@@ -6,6 +6,7 @@ var nzb = {
     "password": "",
     "group": "",
     "link": "",
+    "post_date": "",
     "convert_spaces": 0
 }
 
@@ -59,6 +60,21 @@ else {
         nzb.password = nzb.selection.match(/^.*((passwor[td]|pw|pass).*[:|]\s*)+(\S.*\S)$/im)[3];
     }
 }
+
+// detect post date: indicator "post date", some separator, then something that looks like a date
+var post_date_regex = /^.*post date.*[:|]\s*([0-9]{2,4}[./][0-9]{2}[./][0-9]{2,4}).*$/im
+if (post_date_regex.test(nzb.selection)) {
+    var post_date_text = nzb.selection.match(post_date_regex)[1]
+    // date must be formatted DD.MM.YYYY, so replace / with . and fix order if we detect YYYY.MM.DD
+    var date_wrong_order_regex = new RegExp("([0-9]{4})[./]([0-9]{2})[./]([0-9]{2})")
+    var date_right_order_regex = new RegExp("([0-9]{2})[./]([0-9]{2})[./]([0-9]{4})")
+    if (date_right_order_regex.test(post_date_text)) {
+        nzb.post_date = post_date_text.replace(date_right_order_regex, "$1.$2.$3")
+    }
+    if (date_wrong_order_regex.test(post_date_text)) {
+        nzb.post_date = post_date_text.replace(date_wrong_order_regex, "$3.$2.$1")
+    }
+}
         
 // test if the selection contains usenet group names in the format alt.xyz or a.b.xyz
 if (/\b(alt|a\.b)(\.[a-z0-9.+_-]*\b)/i.test(nzb.selection)) {
@@ -93,6 +109,10 @@ function showPopup() {
 <p>
     <label for="nzblinker-password">${chrome.i18n.getMessage('extNZBPassword')}:</label>
     <input type="text" id="nzblinker-password" name="nzblinker-password" value="${nzb.password}" class="modal-prompt-input"/>
+</p>
+<p>
+    <label for="nzblinker-postdate">${chrome.i18n.getMessage('extNZBPostDate')}: <small>(${chrome.i18n.getMessage('extNZBPostDateNote')})</small></label>
+    <input type="text" id="nzblinker-postdate" name="nzblinker-postdate" value="${nzb.post_date}" class="modal-prompt-input"/>
 </p>
 <p>
     <label for="nzblinker-group">${chrome.i18n.getMessage('extNZBGroups')}: <small>(${chrome.i18n.getMessage('extNZBGroupsNote')})</small></label>
@@ -173,7 +193,7 @@ function showPopup() {
                     updateNZBLink();
                 }
             });
-            $("#nzblinker-title, #nzblinker-password, #nzblinker-group").on("change keydown paste input", function(){
+            $("#nzblinker-title, #nzblinker-password, #nzblinker-group", "#nzblinker-postdate").on("change keydown paste input", function(){
                 updateNZBLink();
             });
             $("#nzblinker-convert_spaces").on("change", function(){
@@ -196,11 +216,11 @@ function showPopup() {
 
 // function to update the NZBLink field
 function updateNZBLink() {
-    $("#nzblinker-link").val(generateNZBLink($("#nzblinker-title").val(), $("#nzblinker-header").val(), $("#nzblinker-password").val(), $("#nzblinker-group").val()));
+    $("#nzblinker-link").val(generateNZBLink($("#nzblinker-title").val(), $("#nzblinker-header").val(), $("#nzblinker-password").val(), $("#nzblinker-group").val(), $("#nzblinker-postdate").val()));
 }
 
 // function to generate the NZBLink
-function generateNZBLink(title, header, password, group) {
+function generateNZBLink(title, header, password, group, post_date) {
     var setting = nzb.convert_spaces;
     // process spaces and periods in the title according to the user selection
     if (setting != "0") {
@@ -232,6 +252,7 @@ function generateNZBLink(title, header, password, group) {
     if (header) { parameters.push( "h=" + encodeURIComponent(header) ) };
     if (password) { parameters.push( "p=" + encodeURIComponent(password) ) };
     if (groups) { parameters.push( groups ) };
+    if (post_date) { parameters.push( "d=" + encodeURIComponent(post_date) ) };
     return "nzblnk://?" + parameters.join("&");
 }
 
