@@ -32,6 +32,9 @@ Diese Erweiterung basiert auf der Idee und dem ursprünglichen Skript von Zandri
 v0.7.0 wurde von mir komplett neu designed und überarbeitet.
 
 ## Change Log
+### v0.7.2
+* Unterstützung für den zusätzlichen NZBLNK-Parameter "Post-Datum" (d) und experimentelle Erkennung des Post-Datums (Danke an [plneappl](https://github.com/plneappl))
+
 ### v0.7.1
 * Löschung eines vergessen Debug-Alert
 * Update auf jQuery 3.5.1

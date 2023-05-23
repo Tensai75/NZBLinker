@@ -32,6 +32,9 @@ This extension is based on the idea and the initial script of Zandrial and was f
 v0.7.0 was completely redesigned and revised by me.
 
 ## Change Log
+### v0.7.2
+* Support for additional NZBLNK parameter "post date" (d) and experimental post date detection (thanks to [plneappl](https://github.com/plneappl))
+
 ### v0.7.1
 * Deletion of a debug alert
 * Update to jQuery 3.5.1
