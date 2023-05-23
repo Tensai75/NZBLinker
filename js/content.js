@@ -137,7 +137,7 @@ function showPopup() {
 
     modal({
         type: 'primary', //Type of Modal Box (alert | confirm | prompt | success | warning | error | info | inverted | primary)
-        title: '<img src="' + chrome.extension.getURL('/icons/nzblinker.png') + '" /><span>' + chrome.i18n.getMessage('extName') + ' </span>', //Modal Title
+        title: '<img src="' + chrome.runtime.getURL('/icons/nzblinker.png') + '" /><span>' + chrome.i18n.getMessage('extName') + ' </span>', //Modal Title
         text: html, //Modal HTML Content
         size: 'normal', //Modal Size (normal | large | small)
         buttons: [{
