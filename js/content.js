@@ -193,7 +193,7 @@ function showPopup() {
                     updateNZBLink();
                 }
             });
-            $("#nzblinker-title, #nzblinker-password, #nzblinker-group", "#nzblinker-postdate").on("change keydown paste input", function(){
+            $("#nzblinker-title, #nzblinker-password, #nzblinker-group, #nzblinker-postdate").on("change keydown paste input", function(){
                 updateNZBLink();
             });
             $("#nzblinker-convert_spaces").on("change", function(){
