@@ -32,6 +32,10 @@ This extension is based on the idea and the initial script of Zandrial and was f
 v0.7.0 was completely redesigned and revised by me.
 
 ## Change Log
+### v0.7.3
+* Bug fix: fix for the eventhandler error.
+* Addition of NZBLNK parameter "post date" (d) also in the popup window for the NZBLNK creation.
+
 ### v0.7.2
 * Support for additional NZBLNK parameter "post date" (d) and experimental post date detection (thanks to [plneappl](https://github.com/plneappl))
 

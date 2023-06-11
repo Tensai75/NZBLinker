@@ -32,6 +32,10 @@ Diese Erweiterung basiert auf der Idee und dem ursprünglichen Skript von Zandri
 v0.7.0 wurde von mir komplett neu designed und überarbeitet.
 
 ## Change Log
+### v0.7.3
+* Fehlerbehebung: Fix für den Eventhandler-Fehler.
+* Unterstützung für den zusätzlichen NZBLNK-Parameter "Post-Datum" (d) auch im Popup-Fenster für die NZBLNK-Erstellung.
+
 ### v0.7.2
 * Unterstützung für den zusätzlichen NZBLNK-Parameter "Post-Datum" (d) und experimentelle Erkennung des Post-Datums (Danke an [plneappl](https://github.com/plneappl))
 
