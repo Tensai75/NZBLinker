@@ -6,6 +6,7 @@ $(document).ready(function() {
         "password": "",
         "group": "",
         "link": "",
+        "post_date": "",
         "convert_spaces": 0
     }
 
@@ -39,6 +40,10 @@ $(document).ready(function() {
         <p>
             <label for="nzblinker-password">${chrome.i18n.getMessage('extNZBPassword')}:</label>
             <input type="text" id="nzblinker-password" name="nzblinker-password" value="${nzb.password}" class="modal-prompt-input"/>
+        </p>
+        <p>
+            <label for="nzblinker-postdate">${chrome.i18n.getMessage('extNZBPostDate')}: <small>(${chrome.i18n.getMessage('extNZBPostDateNote')})</small></label>
+            <input type="text" id="nzblinker-postdate" name="nzblinker-postdate" value="${nzb.post_date}" class="modal-prompt-input"/>
         </p>
         <p>
             <label for="nzblinker-group">${chrome.i18n.getMessage('extNZBGroups')}: <small>(${chrome.i18n.getMessage('extNZBGroupsNote')})</small></label>
@@ -97,7 +102,7 @@ $(document).ready(function() {
             }
         });
 
-        $("#nzblinker-title, #nzblinker-password, #nzblinker-group").on("change keydown paste input", function(){
+        $("#nzblinker-title, #nzblinker-password, #nzblinker-group, #nzblinker-postdate").on("change keydown paste input", function(){
             updateNZBLink();
         });
 
@@ -115,11 +120,11 @@ $(document).ready(function() {
 
     // function to update the NZBLink field
     function updateNZBLink() {
-        $("#nzblinker-link").val(generateNZBLink($("#nzblinker-title").val(), $("#nzblinker-header").val(), $("#nzblinker-password").val(), $("#nzblinker-group").val()));
+        $("#nzblinker-link").val(generateNZBLink($("#nzblinker-title").val(), $("#nzblinker-header").val(), $("#nzblinker-password").val(), $("#nzblinker-group").val(), $("#nzblinker-postdate").val()));
     }
 
     // function to generate the NZBLink
-    function generateNZBLink(title, header, password, group) {
+    function generateNZBLink(title, header, password, group, post_date) {
         var setting = nzb.convert_spaces;
         // process spaces and periods in the title according to the user selection
         if (setting != "0") {
@@ -151,6 +156,7 @@ $(document).ready(function() {
         if (header) { parameters.push( "h=" + encodeURIComponent(header) ) };
         if (password) { parameters.push( "p=" + encodeURIComponent(password) ) };
         if (groups) { parameters.push( groups ) };
+        if (post_date) { parameters.push( "d=" + encodeURIComponent(post_date) ) };
         return "nzblnk://?" + parameters.join("&");
     }
 });
