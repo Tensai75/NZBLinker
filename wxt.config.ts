@@ -10,7 +10,7 @@ const getManifest: (env: ConfigEnv) => Partial<Browser.runtime.Manifest> = (env)
     name: '__MSG_extension_name__',
     description: '__MSG_extension_description__',
     default_locale: 'en',
-    permissions: ['scripting', 'storage', 'contextMenus', 'clipboardWrite'],
+    permissions: ['activeTab', 'scripting', 'storage', 'contextMenus', 'clipboardWrite'],
     web_accessible_resources: [
       {
         resources: ['/icon/*', '/assets/*'],

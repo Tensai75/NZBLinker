@@ -8,7 +8,6 @@ import { MyPreset } from '@/assets/presets'
 
 export default defineContentScript({
   registration: 'runtime',
-  matches: ['<all_urls>'],
   main(ctx) {
     const primeVueTheme = {
       theme: {
