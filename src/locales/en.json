@@ -1,0 +1,61 @@
+{
+  "extension": {
+    "name": "NZBLinker",
+    "description": "Addon to create NZBLNK links either from a selected text or from scratch."
+  },
+  "menu": {
+    "settings": {
+      "title": "Settings",
+      "general": "General settings",
+      "nzbFile": "Title processing"
+    },
+    "license": "License",
+    "privacyPolicy": "Privacy Policy",
+    "changelog": "Change log",
+    "about": "About NZBLinker",
+    "credits": "Credits"
+  },
+  "settings": {
+    "general": {
+      "selectText": {
+        "enterSearchKey": "Enter search term",
+        "searchKeyTitel": "Custom search terms for text selection"
+      }
+    },
+    "processing": {
+      "processTitle": {
+        "description": "edit the title parameter",
+        "spaces": "Convert all spaces to dots",
+        "dots": "Convert all dots to spaces"
+      }
+    }
+  },
+  "validation": {
+    "isRequired": "$1 is required"
+  },
+  "contextMenu": {
+    "analyseSelection": "Create NZBLNK from text"
+  },
+  "selectionDialog": {
+    "enterNewsgroup": "Enter newsgroup name",
+    "asDate": "as date",
+    "asTimestamp": "as timestamp"
+  },
+  "nzblnk": {
+    "copyLink": "Copy NZBLNK",
+    "executeLink": "Execute NZBLNK",
+    "title": "NZBLNK",
+    "generateLink": "Generate NZBLNK"
+  },
+  "common": {
+    "close": "Close",
+    "creditsDisclaimer": "NZBLinker uses the following packages under the corresponding licence",
+    "date": "Date",
+    "groups": "Groups",
+    "header": "Header",
+    "openSettings": "Open Settings",
+    "password": "Password",
+    "selection": "Selected text",
+    "title": "Title"
+  }
+}

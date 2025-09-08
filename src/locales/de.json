@@ -1,0 +1,61 @@
+{
+  "extension": {
+    "name": "NZBLinker",
+    "description": "Erweiterung zur Erstellung von NZBLNK-Links entweder aus einem selektierten Text oder durch manuelle Eingabe."
+  },
+  "menu": {
+    "settings": {
+      "title": "Einstellungen",
+      "general": "Allgemeine Einstellungen",
+      "nzbFile": "Titel-Verarbeitung"
+    },
+    "license": "Lizenz",
+    "privacyPolicy": "Datenschutz-Richtlinien",
+    "changelog": "Änderungs-Historie",
+    "about": "Über NZBLinker",
+    "credits": "Credits"
+  },
+  "settings": {
+    "general": {
+      "selectText": {
+        "enterSearchKey": "Suchbegriff eingeben",
+        "searchKeyTitel": "Benutzerdefinierte Suchbegriffe für die Textauswahl"
+      }
+    },
+    "processing": {
+      "processTitle": {
+        "description": "den Titel-Parameter bearbeiten",
+        "spaces": "Alle Leerzeichen zu Punkten konvertieren",
+        "dots": "Alle Punkte in Leerzeichen konvertieren"
+      }
+    }
+  },
+  "common": {
+    "header": "Header",
+    "password": "Passwort",
+    "title": "Titel",
+    "selection": "Selektierter Text",
+    "close": "Schliessen",
+    "openSettings": "Einstellungen öffnen",
+    "date": "Datum",
+    "creditsDisclaimer": "NZBLinker verwendet die folgenden Pakete unter der entsprechenden Lizenz",
+    "groups": "Gruppen"
+  },
+  "validation": {
+    "isRequired": "$1 ist ein Pflichtfeld"
+  },
+  "contextMenu": {
+    "analyseSelection": "NZBLNK aus dem Text erstellen"
+  },
+  "selectionDialog": {
+    "enterNewsgroup": "Newsgruppe eingegeben",
+    "asDate": "als Datum",
+    "asTimestamp": "als Timestamp"
+  },
+  "nzblnk": {
+    "copyLink": "NZBLNK kopieren",
+    "executeLink": "NZBLNK ausführen",
+    "title": "NZBLNK",
+    "generateLink": "NZBLNK generieren"
+  }
+}

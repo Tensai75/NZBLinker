@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icon/256.png" />
+    <link wxt-ignore rel="stylesheet" href="/assets/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="manifest.type" content="browser_action" />
+    <title data-locale="extension_name">NZBLinker</title>
+    <style>
+      html,
+      body,
+      body {
+        margin: 0;
+      }
+
+      /* Hide scrollbars (Firefox + WebKit/Blink) */
+      html,
+      body {
+        scrollbar-width: none;
+      }
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
