@@ -1,7 +1,7 @@
 {
   "name": "nzblinker",
   "description": "Webextension to create an NZBLNK link either from a selected text or from scratch",
-  "version": "0.7.3",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",

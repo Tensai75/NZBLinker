@@ -1,3 +1,22 @@
+# [1.0.0](https://github.com/Tensai75/NZBLinker/compare/v0.7.3...v1.0.0) (2025-09-08)
+
+
+### Features
+
+* complete rewrite of the code base and update to Manifest v3 ([8580736](https://github.com/Tensai75/NZBLinker/commit/8580736376c9aa7cc34dbc0f97e6f0e8b1795e76))
+
+
+### BREAKING CHANGES
+
+* Only compatible with Manifest v3
+
+### New features:
+* manifest v3 support
+* new options page
+* new options to add search terms for the parameters
+* improved text analysis regexp
+* new design with light/dark mode according to system settings
+
 # [1.0.0-beta.1](https://github.com/Tensai75/NZBLinker/compare/v0.7.3...v1.0.0-beta.1) (2025-09-07)
 
 
