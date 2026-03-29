@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Tensai75/NZBLinker/compare/v1.0.0...v1.0.1) (2026-03-29)
+
+
+### Bug Fixes
+
+* improved date extraction and parsing with validation ([1e2384d](https://github.com/Tensai75/NZBLinker/commit/1e2384dacc3b8af5c5ff5b50cc22549437d52db1)), closes [#6](https://github.com/Tensai75/NZBLinker/issues/6)
+
 # [1.0.0](https://github.com/Tensai75/NZBLinker/compare/v0.7.3...v1.0.0) (2025-09-08)
 
 
