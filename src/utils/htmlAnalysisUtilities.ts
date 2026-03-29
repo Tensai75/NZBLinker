@@ -104,7 +104,7 @@ export function analyseText(settings: Settings): {
   // test for date
   const timestampRegexpString = `([12]\\d{9,9})(?:\\d{4,4})?` // 09.09.2001 01:46:40 - 24.01.2065 05:19:59
   const isTimestampRegexp = new RegExp(timestampRegexpString)
-  const normalDateRegexpString = `([0-3]?\\d[.\\/-][01]\\d[.\\\\/-](?:20)?\\d{2,2})`
+  const normalDateRegexpString = `([0-3]?\\d[.\\/-][01]?\\d[.\\/-](?:20)?\\d{2,2})`
   const normalDateRegexp = new RegExp(normalDateRegexpString)
   // first search for a date or timestamp with a leading description
   let customDateSearchTerms = settings.textSelection.date.join('|')
@@ -118,7 +118,7 @@ export function analyseText(settings: Settings): {
         timestamp = new Date(test[1]).getTime() / 1000
         isTimestamp = true
       } else if (normalDateRegexp.test(test[1])) {
-        date = new Date(test[1].replace(/[\\/-]/g, '.'))
+        date = parseDate(test[1])
         isTimestamp = false
       }
     }
@@ -133,7 +133,7 @@ export function analyseText(settings: Settings): {
     } else if (normalDateRegexp.test(selection)) {
       test = selection.match(normalDateRegexp)
       if (test) {
-        date = new Date(test[1].replace(/[\\/-]/g, '.'))
+        date = parseDate(test[1])
         isTimestamp = false
       }
     }
@@ -149,6 +149,19 @@ export function analyseText(settings: Settings): {
     timestamp: timestamp,
     isTimestamp: isTimestamp,
   }
+}
+
+function parseDate(s: string): Date | undefined {
+  const parts = s.split(/[.\-/]/)
+  const day = parseInt(parts[0], 10)
+  const month = parseInt(parts[1], 10)
+  let year = parseInt(parts[2], 10)
+  if (isNaN(day) || isNaN(month) || isNaN(year)) return undefined
+  if (year < 100) year += 2000
+  const d = new Date(year, month - 1, day) // month is 0-based in JavaScript Date
+  // verify the date didn't overflow (e.g. day 32 wrapping to next month)
+  if (d.getFullYear() !== year || d.getMonth() !== month - 1 || d.getDate() !== day) return undefined
+  return d
 }
 
 function getSelectionFragment(): DocumentFragment {
